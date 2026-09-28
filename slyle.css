@@ -1,0 +1,283 @@
+/* CINEVIBE — estilos do catálogo de filmes */
+:root {
+  --fundo: #101116;
+  --painel: #191b23;
+  --texto: #f5f5f7;
+  --suave: #b3b4c0;
+  --destaque: #f5b942;
+  --borda: #2c2e38;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.cabecalho {
+  padding: 0 7%;
+  background: radial-gradient(ellipse at 75% 25%, #34303a 0%, #17171e 42%, #101116 78%);
+}
+
+.menu {
+  max-width: 1200px;
+  min-height: 84px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid #ffffff14;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.logo span { color: var(--destaque); }
+
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  list-style: none;
+}
+
+.menu li a {
+  color: #d2d2da;
+  font-size: .94rem;
+  transition: color .2s;
+}
+
+.menu li a:hover { color: var(--destaque); }
+
+.destaque {
+  max-width: 1200px;
+  min-height: 500px;
+  margin: 0 auto;
+  padding: 65px 0 75px;
+  display: grid;
+  grid-template-columns: 1fr .9fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.destaque-texto h1 {
+  margin: 18px 0;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+
+.destaque-texto h1 span { color: var(--destaque); }
+
+.destaque-texto p:not(.selo) {
+  max-width: 540px;
+  margin-bottom: 28px;
+  color: var(--suave);
+}
+
+.selo, .sobretitulo {
+  color: var(--destaque);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.destaque img {
+  display: block;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid #ffffff20;
+  box-shadow: 0 24px 70px #00000050;
+}
+
+.botao {
+  display: inline-block;
+  padding: 12px 23px;
+  border-radius: 6px;
+  background: var(--destaque);
+  color: #17130a;
+  font-weight: 800;
+  transition: transform .2s, background .2s;
+}
+
+.botao:hover {
+  background: #ffd16b;
+  transform: translateY(-2px);
+}
+
+.introducao, .catalogo, .generos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 75px 7%;
+}
+
+.introducao { text-align: center; }
+
+.introducao h2, .titulo-secao h2, .generos h2 {
+  margin: 8px 0 14px;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1.2;
+}
+
+.introducao p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--suave);
+}
+
+.catalogo { padding-top: 25px; }
+
+.titulo-secao {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.contador {
+  color: var(--suave);
+  font-size: .78rem;
+  letter-spacing: 1px;
+}
+
+.grade-filmes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.filme {
+  overflow: hidden;
+  background: var(--painel);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  transition: transform .2s, border-color .2s;
+}
+
+.filme:hover {
+  transform: translateY(-5px);
+  border-color: #665638;
+}
+
+.filme img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: #292a32;
+}
+
+.filme-info { padding: 20px; }
+
+.genero {
+  color: var(--destaque);
+  font-size: .76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.filme h3 {
+  margin: 7px 0;
+  font-size: 1.25rem;
+}
+
+.filme p {
+  min-height: 78px;
+  color: var(--suave);
+  font-size: .93rem;
+}
+
+.detalhes {
+  display: block;
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid var(--borda);
+  color: #858795;
+  font-size: .82rem;
+}
+
+.generos {
+  max-width: none;
+  padding: 65px 7%;
+  background: #191a21;
+  text-align: center;
+}
+
+.lista-generos {
+  max-width: 900px;
+  margin: 28px auto 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.lista-generos span {
+  padding: 10px 17px;
+  border: 1px solid #383944;
+  border-radius: 30px;
+  color: #e3e3e9;
+  background: #202129;
+}
+
+footer {
+  padding: 38px 7%;
+  text-align: center;
+  border-top: 1px solid var(--borda);
+}
+
+footer p {
+  margin: 8px 0;
+  color: var(--suave);
+}
+
+footer small { color: #858795; }
+
+/* Responsividade */
+@media (max-width: 850px) {
+  .cabecalho { padding: 0 5%; }
+  .menu {
+    padding: 20px 0;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .menu ul { gap: 12px 20px; }
+  .destaque {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 45px 0 60px;
+  }
+  .destaque img { height: 300px; }
+  .introducao, .catalogo { padding-left: 5%; padding-right: 5%; }
+  .grade-filmes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .menu ul { gap: 10px 15px; }
+  .menu li a { font-size: .88rem; }
+  .destaque img { height: 230px; }
+  .grade-filmes { grid-template-columns: 1fr; }
+  .filme img { height: 230px; }
+  .filme p { min-height: 0; }
+  .titulo-secao { align-items: flex-start; flex-direction: column; }
+  .introducao, .catalogo { padding-top: 55px; padding-bottom: 55px; }
+}
